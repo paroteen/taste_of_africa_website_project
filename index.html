@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tastes of Africa celebrates the rich and diverse culinary traditions of the African continent.">
+  <title>Home | Tastes of Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Tastes <span>of Africa</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="regions.html">Regions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="eyebrow">Karibu &middot; Akwaaba &middot; Marhaba</span>
+          <h1>Discover the <em>Tastes</em> of Africa</h1>
+          <p>Fifty-four countries, thousands of cultures and one shared love of gathering around good food. Explore recipes, regions and the stories behind every dish.</p>
+          <div class="hero-actions">
+            <a class="btn btn--light" href="recipes.html">Browse recipes</a>
+            <a class="btn btn--ghost" href="regions.html">Explore regions</a>
+          </div>
+        </div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube-nocookie.com/embed/1zyDUkdVZ0E" title="Video: exploring the richness of African cuisine" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="container">
+        <span class="eyebrow">Signature plates</span>
+        <h2>Featured Dishes</h2>
+        <p class="section-intro">Four dishes that tell the story of a continent, from smoky West African <mark>jollof</mark> to Ethiopia&rsquo;s tangy <mark>teff</mark> flatbread. Tap the heart to save a recipe for later.</p>
+        <div class="card-grid">
+          <article class="recipe-card" data-region="west-africa" data-id="jollof-rice">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jollof_%28Jollof-_Rice%29.jpg/1280px-Jollof_%28Jollof-_Rice%29.jpg" alt="A plate of orange-red jollof rice" loading="lazy">
+              <figcaption>Nigeria &middot; West Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3>Jollof Rice</h3>
+              <p>Smoky, tomato-rich party rice simmered with <mark>scotch bonnet</mark> and thyme.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/jollof-rice.html" aria-label="View the Jollof Rice recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="jollof-rice" aria-pressed="false" aria-label="Favorite Jollof Rice">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="north-africa" data-id="tagine">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Moroccan_food-Chicken_tagine_with_preserved_lemons_and_olives-01.jpg/1280px-Moroccan_food-Chicken_tagine_with_preserved_lemons_and_olives-01.jpg" alt="Chicken tagine with preserved lemons and green olives" loading="lazy">
+              <figcaption>Morocco &middot; North Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3>Chicken Tagine</h3>
+              <p>Slow-braised chicken with <mark>preserved lemon</mark>, olives and saffron.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/tagine.html" aria-label="View the Chicken Tagine recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="tagine" aria-pressed="false" aria-label="Favorite Chicken Tagine">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="east-africa" data-id="injera">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Injera_with_eight_kinds_of_stew.jpg/1280px-Injera_with_eight_kinds_of_stew.jpg" alt="Injera flatbread topped with eight colourful stews" loading="lazy">
+              <figcaption>Ethiopia &middot; East Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3>Injera</h3>
+              <p>Spongy, tangy sourdough flatbread made from ancient <mark>teff</mark> grain.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/injera.html" aria-label="View the Injera recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="injera" aria-pressed="false" aria-label="Favorite Injera">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="east-africa" data-id="isombe">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/ISOMBE_AND_RICE.jpg/1280px-ISOMBE_AND_RICE.jpg" alt="Isombe, a green cassava-leaf stew, served with rice" loading="lazy">
+              <figcaption>Rwanda &middot; East Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3>Isombe</h3>
+              <p>Rwanda&rsquo;s comforting stew of pounded <mark>cassava leaves</mark> and peanut.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/isombe.html" aria-label="View the Isombe recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="isombe" aria-pressed="false" aria-label="Favorite Isombe">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="regions">
+      <div class="container">
+        <span class="eyebrow">A continent of kitchens</span>
+        <h2>Explore by Region</h2>
+        <p class="section-intro">Every region has its own staples, spices and techniques, shaped by climate, trade and centuries of tradition.</p>
+        <div class="card-grid">
+          <a class="region-card" href="regions/west-africa.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Suya_Seller.jpg/1280px-Suya_Seller.jpg" alt="A suya seller grilling spiced meat skewers" loading="lazy">
+            <div class="card-body">
+              <h3>West Africa</h3>
+              <p>Bold, smoky and peppery: jollof, suya, fufu and rich palm-oil stews.</p>
+            </div>
+          </a>
+          <a class="region-card" href="regions/north-africa.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Couscous-1.jpg/1280px-Couscous-1.jpg" alt="A bowl of couscous with vegetables and chickpeas" loading="lazy">
+            <div class="card-body">
+              <h3>North Africa</h3>
+              <p>Fragrant and layered: tagines, couscous, harissa and mint tea.</p>
+            </div>
+          </a>
+          <a class="region-card" href="regions/east-africa.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ugali_Posho.jpg/1280px-Ugali_Posho.jpg" alt="A plate of ugali, East Africa's maize-meal staple" loading="lazy">
+            <div class="card-body">
+              <h3>East Africa</h3>
+              <p>Earthy and communal: injera, ugali, isombe and Swahili coast spices.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trends">
+      <div class="container">
+        <span class="eyebrow">What&rsquo;s cooking</span>
+        <h2>Latest Food Trends</h2>
+        <p class="section-intro">African cuisine is having a global moment. Here is what the food world is talking about.</p>
+        <div class="trends">
+          <article class="trend">
+            <time datetime="2024-02">February 2024</time>
+            <h3>West African fine dining earns its stars</h3>
+            <p>London&rsquo;s Chishuru, led by chef Adejok&eacute; Bakare, won a Michelin star for modern West African cooking, putting <mark>uda</mark>, <mark>uziza</mark> and fermented locust beans on the fine-dining map.</p>
+          </article>
+          <article class="trend">
+            <time datetime="2020-12">December 2020</time>
+            <h3>Couscous joins UNESCO&rsquo;s heritage list</h3>
+            <p>Algeria, Mauritania, Morocco and Tunisia jointly secured recognition for the knowledge and traditions of <mark>couscous</mark> &mdash; a rare joint celebration of shared Maghrebi culture.</p>
+          </article>
+          <article class="trend">
+            <time>Ongoing trend</time>
+            <h3>Fonio: the ancient grain making a comeback</h3>
+            <p>Chefs and farmers are championing <mark>fonio</mark>, a drought-resistant West African grain grown for thousands of years, as a nutritious and climate-friendly alternative to rice and quinoa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section>
+          <h2>Tastes of Africa</h2>
+          <p>Celebrating the flavours, ingredients and stories of African kitchens &mdash; one dish at a time.</p>
+        </section>
+        <section>
+          <h2>Explore</h2>
+          <ul class="footer-links">
+            <li><a href="recipes.html">All recipes</a></li>
+            <li><a href="regions.html">Culinary regions</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Newsletter</h2>
+          <p>A new recipe in your inbox every month.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="hidden" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+            <button class="btn btn--light" type="submit">Sign up</button>
+          </form>
+          <p class="newsletter-feedback" id="newsletter-feedback" role="status"></p>
+        </section>
+      </div>
+      <p class="copyright">&copy; 2026 Tastes of Africa. A student project. Photos from Wikimedia Commons &mdash; see <a href="about.html#credits">credits</a>.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

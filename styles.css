@@ -1,0 +1,867 @@
+/* ==========================================================
+   Tastes of Africa — shared stylesheet
+   Palette inspired by African spices and landscapes:
+   saffron, paprika, baobab brown, savanna cream, plantain green
+   ========================================================== */
+
+:root {
+  --saffron: #e9a319;
+  --saffron-soft: #fbe3a6;
+  --paprika: #b23a1e;
+  --paprika-dark: #8c2a13;
+  --baobab: #3b2416;
+  --clay: #7a4a2b;
+  --cream: #fbf3e4;
+  --sand: #f3e4c8;
+  --leaf: #4f6b3a;
+  --white: #ffffff;
+  --text: #2e1f15;
+  --muted: #6b5546;
+
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Nunito", "Helvetica Neue", Arial, sans-serif;
+
+  --radius: 1rem;
+  --shadow: 0 0.5rem 1.5rem rgba(59, 36, 22, 0.14);
+  --shadow-hover: 0 0.9rem 2.2rem rgba(59, 36, 22, 0.22);
+  --space: 1.5rem;
+  --max-width: 72rem;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--cream);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--baobab);
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: var(--paprika);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.2em;
+}
+
+a:hover { color: var(--paprika-dark); }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Highlighted ingredients, spices and cooking methods */
+mark {
+  background: linear-gradient(transparent 45%, var(--saffron-soft) 45%);
+  color: var(--paprika-dark);
+  font-weight: 700;
+  padding: 0 0.2em;
+  border-radius: 0.2em;
+}
+
+.container {
+  width: 92%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section { padding: 3.5rem 0; }
+.section--alt { background-color: var(--sand); }
+
+.section-intro {
+  max-width: 44rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paprika);
+  margin-bottom: 0.5rem;
+}
+
+.hidden { display: none !important; }
+
+.skip-link {
+  position: absolute;
+  left: -999rem;
+  top: 0;
+  background: var(--baobab);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus { left: 0; }
+
+/* ---------- Buttons ---------- */
+
+.btn,
+button {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--paprika);
+  border-radius: 999px;
+  background-color: var(--paprika);
+  color: var(--white);
+  font-weight: 800;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--paprika-dark);
+  border-color: var(--paprika-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--paprika);
+}
+
+.btn--light {
+  background-color: var(--saffron);
+  border-color: var(--saffron);
+  color: var(--baobab);
+}
+
+.btn--light:hover {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--baobab);
+}
+
+:focus-visible {
+  outline: 3px solid var(--saffron);
+  outline-offset: 3px;
+}
+
+/* ---------- Header & navigation ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--baobab);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--saffron);
+  text-decoration: none;
+}
+
+.brand span { color: var(--cream); }
+.brand:hover { color: var(--saffron); }
+
+.site-nav ul {
+  display: flex;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.45rem 0.9rem;
+  color: var(--cream);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--saffron);
+  border-bottom-color: var(--saffron);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--saffron);
+  border-radius: 0.5rem;
+  color: var(--saffron);
+  font-weight: 800;
+  padding: 0.35rem 0.8rem;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  background-color: var(--baobab);
+  background-image:
+    linear-gradient(100deg, rgba(40, 20, 10, 0.88) 0%, rgba(40, 20, 10, 0.6) 55%, rgba(178, 58, 30, 0.35) 100%),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Assorted_African_Food_spices_and_medicines.jpg/1280px-Assorted_African_Food_spices_and_medicines.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero h1 {
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero h1 em {
+  color: var(--saffron);
+  font-style: italic;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 34rem;
+}
+
+.hero .eyebrow { color: var(--saffron); }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.hero .btn--ghost {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.hero .btn--ghost:hover {
+  background-color: var(--white);
+  color: var(--baobab);
+}
+
+/* Smaller banner used on inner pages */
+.page-banner {
+  background: linear-gradient(120deg, var(--baobab), var(--paprika-dark));
+  color: var(--cream);
+  padding: 3rem 0 2.5rem;
+  border-bottom: 6px solid var(--saffron);
+}
+
+.page-banner h1 { color: var(--white); }
+.page-banner p { max-width: 44rem; margin-bottom: 0; }
+.page-banner .eyebrow { color: var(--saffron); }
+.page-banner a { color: var(--saffron-soft); }
+
+.page-banner mark {
+  background: none;
+  color: var(--saffron);
+}
+
+/* ---------- Embedded video & maps ---------- */
+
+.video-wrap,
+.map-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background-color: var(--baobab);
+}
+
+.map-wrap {
+  aspect-ratio: 4 / 3;
+  border: 4px solid var(--white);
+}
+
+.video-wrap iframe,
+.map-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Cards ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space);
+}
+
+.recipe-card,
+.region-card,
+.trend {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.recipe-card:hover,
+.region-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card figure {
+  margin: 0;
+  position: relative;
+}
+
+.recipe-card img,
+.region-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--sand);
+}
+
+.recipe-card figcaption {
+  position: absolute;
+  left: 0.8rem;
+  bottom: 0.8rem;
+  background-color: rgba(59, 36, 22, 0.85);
+  color: var(--cream);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.2rem 1.3rem 1.4rem;
+}
+
+.card-body p {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.card-link {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.card-link:hover { text-decoration: underline; }
+
+/* Favorite button */
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background-color: var(--cream);
+  border: 2px solid var(--sand);
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.fav-btn .heart {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #b9a898;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.fav-btn:hover { border-color: var(--paprika); }
+
+.fav-btn.is-favorite {
+  background-color: #fde8e4;
+  border-color: #e0245e;
+  color: var(--paprika-dark);
+}
+
+.fav-btn.is-favorite .heart {
+  color: #e0245e;
+  transform: scale(1.25);
+}
+
+/* Filter buttons */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  background-color: var(--white);
+  border: 2px solid var(--clay);
+  border-radius: 999px;
+  color: var(--clay);
+  font-weight: 800;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: var(--saffron-soft);
+}
+
+.filter-btn.active {
+  background-color: var(--paprika);
+  border-color: var(--paprika);
+  color: var(--white);
+}
+
+.empty-message {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border: 2px dashed var(--clay);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Region cards */
+.region-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.region-card .card-body { padding-bottom: 1.5rem; }
+.region-card h3 { color: var(--paprika); }
+.region-card:hover h3 { text-decoration: underline; }
+
+/* Latest food trends */
+.trends {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--space);
+}
+
+.trend {
+  padding: 1.5rem;
+  border-top: 6px solid var(--saffron);
+}
+
+.trend time {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--leaf);
+  margin-bottom: 0.4rem;
+}
+
+.trend p:last-child { margin-bottom: 0; }
+
+/* ---------- Recipe page ---------- */
+
+.recipe-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.recipe-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.recipe-meta li {
+  background-color: var(--sand);
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.panel {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: var(--space);
+}
+
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.6rem;
+  border-bottom: 1px dashed var(--sand);
+}
+
+.ingredients li:last-child { border-bottom: 0; }
+
+.ingredients li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 1.05rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: var(--saffron);
+}
+
+details {
+  background-color: var(--white);
+  border-left: 5px solid var(--paprika);
+  border-radius: 0.6rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 0.9rem;
+}
+
+summary {
+  cursor: pointer;
+  padding: 0.9rem 1.2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--baobab);
+}
+
+summary:hover { color: var(--paprika); }
+
+details[open] summary { border-bottom: 1px solid var(--sand); }
+
+details ol,
+details p {
+  margin: 0;
+  padding: 1rem 1.2rem 1.2rem 2.6rem;
+}
+
+details p { padding-left: 1.2rem; }
+details li { margin-bottom: 0.5rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--baobab);
+  color: var(--cream);
+}
+
+tbody tr:nth-child(even) { background-color: var(--cream); }
+tbody td:last-child { font-weight: 700; }
+
+/* ---------- Regions & about ---------- */
+
+.prose { max-width: 46rem; }
+
+.prose h2 { margin-top: 2.2rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: 0.4rem; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.mission {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.5;
+  color: var(--baobab);
+  background-color: var(--white);
+  border-left: 8px solid var(--saffron);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin: 0 0 2rem;
+}
+
+.credits {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ---------- Forms ---------- */
+
+.form-card {
+  max-width: 40rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.form-row { margin-bottom: 1.2rem; }
+
+label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--cream);
+  border: 2px solid var(--sand);
+  border-radius: 0.6rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background-color: var(--white);
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 0.25rem rgba(233, 163, 25, 0.3);
+}
+
+.invalid {
+  border-color: var(--paprika);
+  background-color: #fdf0ec;
+}
+
+.error {
+  display: block;
+  min-height: 1.2rem;
+  color: var(--paprika);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.success-message {
+  max-width: 40rem;
+  background-color: #eef4e6;
+  border: 2px solid var(--leaf);
+  border-radius: var(--radius);
+  padding: 2rem;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--leaf);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background-color: var(--baobab);
+  color: var(--sand);
+  padding: 3rem 0 1.5rem;
+  margin-top: 2rem;
+}
+
+.site-footer h2 {
+  color: var(--saffron);
+  font-size: 1.25rem;
+}
+
+.site-footer a { color: var(--saffron-soft); }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.4fr;
+  gap: 2rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  background-color: var(--white);
+  border-color: transparent;
+}
+
+.newsletter-form .btn { white-space: nowrap; }
+
+.newsletter-feedback {
+  min-height: 1.5rem;
+  margin: 0.5rem 0 0;
+  font-weight: 700;
+  color: var(--saffron);
+}
+
+.copyright {
+  border-top: 1px solid rgba(251, 243, 228, 0.2);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 56rem) {
+  .hero .container,
+  .recipe-layout,
+  .two-col,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero { min-height: auto; }
+}
+
+@media (max-width: 44rem) {
+  .nav-toggle { display: block; }
+
+  .site-header .container { flex-wrap: wrap; }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .site-nav.open { display: block; }
+
+  .site-nav ul { flex-direction: column; }
+
+  .section { padding: 2.5rem 0; }
+
+  .newsletter-form { flex-direction: column; }
+
+  .form-card,
+  .mission {
+    padding: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

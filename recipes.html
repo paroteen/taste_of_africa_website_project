@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse African recipes by region and save your favourites.">
+  <title>Recipes | Tastes of Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Tastes <span>of Africa</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html" aria-current="page">Recipes</a></li>
+            <li><a href="regions.html">Regions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner">
+      <div class="container">
+        <span class="eyebrow">The cookbook</span>
+        <h1>Recipes</h1>
+        <p>Five iconic dishes from across the continent. Filter by region, or tap the heart to save the ones you want to cook.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar" role="group" aria-label="Filter recipes by region">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="west-africa" aria-pressed="false">West Africa</button>
+          <button class="filter-btn" type="button" data-filter="north-africa" aria-pressed="false">North Africa</button>
+          <button class="filter-btn" type="button" data-filter="east-africa" aria-pressed="false">East Africa</button>
+          <button class="filter-btn" type="button" data-filter="southern-africa" aria-pressed="false">Southern Africa</button>
+          <button class="filter-btn" type="button" data-filter="favorites" aria-pressed="false">&#9829;&#xFE0E; My Favorites</button>
+        </div>
+
+        <div class="card-grid" id="recipe-list">
+          <article class="recipe-card" data-region="west-africa" data-id="jollof-rice">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Jollof_%28Jollof-_Rice%29.jpg/1280px-Jollof_%28Jollof-_Rice%29.jpg" alt="A plate of orange-red jollof rice" loading="lazy">
+              <figcaption>Nigeria &middot; West Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2>Jollof Rice</h2>
+              <p>Smoky, tomato-rich party rice simmered with <mark>scotch bonnet</mark> and thyme.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/jollof-rice.html" aria-label="View the Jollof Rice recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="jollof-rice" aria-pressed="false" aria-label="Favorite Jollof Rice">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="north-africa" data-id="tagine">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Moroccan_food-Chicken_tagine_with_preserved_lemons_and_olives-01.jpg/1280px-Moroccan_food-Chicken_tagine_with_preserved_lemons_and_olives-01.jpg" alt="Chicken tagine with preserved lemons and green olives" loading="lazy">
+              <figcaption>Morocco &middot; North Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2>Chicken Tagine</h2>
+              <p>Slow-braised chicken with <mark>preserved lemon</mark>, olives and saffron.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/tagine.html" aria-label="View the Chicken Tagine recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="tagine" aria-pressed="false" aria-label="Favorite Chicken Tagine">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="east-africa" data-id="injera">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Injera_with_eight_kinds_of_stew.jpg/1280px-Injera_with_eight_kinds_of_stew.jpg" alt="Injera flatbread topped with eight colourful stews" loading="lazy">
+              <figcaption>Ethiopia &middot; East Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2>Injera</h2>
+              <p>Spongy, tangy sourdough flatbread made from ancient <mark>teff</mark> grain.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/injera.html" aria-label="View the Injera recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="injera" aria-pressed="false" aria-label="Favorite Injera">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="southern-africa" data-id="bunny-chow">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Bunny_Chow_with_Lamb_%26_Potato_-_African_Chow_2023-07-27.jpg/1280px-Bunny_Chow_with_Lamb_%26_Potato_-_African_Chow_2023-07-27.jpg" alt="Bunny chow: a hollowed bread loaf filled with lamb and potato curry" loading="lazy">
+              <figcaption>South Africa &middot; Southern Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2>Bunny Chow</h2>
+              <p>Durban street food: a hollowed loaf filled with fiery <mark>Durban curry</mark>.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/bunny-chow.html" aria-label="View the Bunny Chow recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="bunny-chow" aria-pressed="false" aria-label="Favorite Bunny Chow">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-region="east-africa" data-id="isombe">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/ISOMBE_AND_RICE.jpg/1280px-ISOMBE_AND_RICE.jpg" alt="Isombe, a green cassava-leaf stew, served with rice" loading="lazy">
+              <figcaption>Rwanda &middot; East Africa</figcaption>
+            </figure>
+            <div class="card-body">
+              <h2>Isombe</h2>
+              <p>Rwanda&rsquo;s comforting stew of pounded <mark>cassava leaves</mark> and peanut.</p>
+              <div class="card-actions">
+                <a class="card-link" href="recipes/isombe.html" aria-label="View the Isombe recipe">View recipe &rarr;</a>
+                <button class="fav-btn" type="button" data-id="isombe" aria-pressed="false" aria-label="Favorite Isombe">
+                  <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="empty-message hidden" id="no-recipes">No recipes here yet. Tap the heart on a recipe to add it to your favorites.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section>
+          <h2>Tastes of Africa</h2>
+          <p>Celebrating the flavours, ingredients and stories of African kitchens &mdash; one dish at a time.</p>
+        </section>
+        <section>
+          <h2>Explore</h2>
+          <ul class="footer-links">
+            <li><a href="recipes.html">All recipes</a></li>
+            <li><a href="regions.html">Culinary regions</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Newsletter</h2>
+          <p>A new recipe in your inbox every month.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="hidden" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+            <button class="btn btn--light" type="submit">Sign up</button>
+          </form>
+          <p class="newsletter-feedback" id="newsletter-feedback" role="status"></p>
+        </section>
+      </div>
+      <p class="copyright">&copy; 2026 Tastes of Africa. A student project. Photos from Wikimedia Commons &mdash; see <a href="about.html#credits">credits</a>.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

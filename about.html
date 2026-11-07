@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Our mission to promote African food heritage, and a brief history of African cuisine.">
+  <title>About Us | Tastes of Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Tastes <span>of Africa</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="regions.html">Regions</a></li>
+            <li><a href="about.html" aria-current="page">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner">
+      <div class="container">
+        <span class="eyebrow">Our story</span>
+        <h1>About Us</h1>
+        <p>Why we believe every African dish deserves a seat at the world&rsquo;s table.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Our mission</h2>
+        <blockquote class="mission">
+          Tastes of Africa exists to celebrate, preserve and share the continent&rsquo;s food heritage &mdash; so that the recipes our grandmothers cooked by heart are known, cooked and loved everywhere.
+        </blockquote>
+
+        <div class="two-col">
+          <div class="prose">
+            <h2 style="margin-top: 0;">A brief history of African cuisine</h2>
+            <p>Africa is the birthplace of some of the world&rsquo;s oldest crops. <mark>Sorghum</mark>, <mark>millet</mark>, <mark>teff</mark>, African rice, yams, okra, black-eyed peas and coffee were all domesticated here thousands of years ago.</p>
+            <p>Trade reshaped the pantry. Trans-Saharan caravans and Indian Ocean dhows carried spices, rice and citrus; from the 1500s, crops from the Americas &mdash; maize, cassava, tomatoes, chillies and peanuts &mdash; arrived and were woven so deeply into local cooking that they now feel native.</p>
+
+            <h2>Global influence</h2>
+            <p>African cooks carried their knowledge across the world. Enslaved West Africans brought okra, rice-growing skills and one-pot stews to the Americas, giving rise to <mark>gumbo</mark>, <mark>jambalaya</mark>, Brazilian acaraj&eacute; and Caribbean rice and peas.</p>
+            <p>Today the influence continues: coffee from Ethiopia fuels the planet, Moroccan tagines and Ethiopian injera are served in every major city, and a new generation of chefs is bringing African flavours to the world&rsquo;s best restaurants.</p>
+          </div>
+
+          <aside>
+            <h2>Visit a food landmark</h2>
+            <p><strong>Jemaa el-Fnaa, Marrakech.</strong> Every evening this historic square fills with hundreds of open-air food stalls, grills and storytellers. It is recognised by UNESCO as a masterpiece of living heritage.</p>
+            <div class="map-wrap">
+              <iframe src="https://www.google.com/maps?q=Jemaa+el-Fnaa%2C+Marrakech%2C+Morocco&amp;z=15&amp;output=embed" title="Map of Jemaa el-Fnaa square in Marrakech" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="credits">
+      <div class="container">
+        <h2>Photo credits</h2>
+        <p class="credits">All photographs are from Wikimedia Commons and are used under their respective licences.</p>
+        <ul class="credits">
+            <li>Jollof rice &mdash; DromoTetteh (CC BY-SA 4.0)</li>
+            <li>Chicken tagine &mdash; Foodista (CC BY 2.0)</li>
+            <li>Injera with eight kinds of stew &mdash; Artem.G (CC BY-SA 4.0)</li>
+            <li>Bunny chow &mdash; Andy Li (CC0)</li>
+            <li>Isombe and rice &mdash; Mutiganda (CC BY-SA 4.0)</li>
+            <li>Suya seller &mdash; FischerFotos (CC BY-SA 4.0)</li>
+            <li>Couscous &mdash; Rainer Zenz (CC BY-SA 3.0)</li>
+            <li>Ugali &mdash; safaritravelplus (CC0)</li>
+            <li>African spices (home page background) &mdash; Alvinategyeka (CC BY-SA 4.0)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section>
+          <h2>Tastes of Africa</h2>
+          <p>Celebrating the flavours, ingredients and stories of African kitchens &mdash; one dish at a time.</p>
+        </section>
+        <section>
+          <h2>Explore</h2>
+          <ul class="footer-links">
+            <li><a href="recipes.html">All recipes</a></li>
+            <li><a href="regions.html">Culinary regions</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Newsletter</h2>
+          <p>A new recipe in your inbox every month.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="hidden" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+            <button class="btn btn--light" type="submit">Sign up</button>
+          </form>
+          <p class="newsletter-feedback" id="newsletter-feedback" role="status"></p>
+        </section>
+      </div>
+      <p class="copyright">&copy; 2026 Tastes of Africa. A student project. Photos from Wikimedia Commons &mdash; see <a href="about.html#credits">credits</a>.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
    3. "Add to Favorites" with localStorage
    4. Contact form validation & feedback
    5. Newsletter signup feedback
+   6. Dark / light mode toggle
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupRecipeFilter();
   setupContactForm();
   setupNewsletter();
+  setupThemeToggle();
 });
 
 /* ---------- 1. Mobile navigation ---------- */
@@ -223,5 +225,53 @@ function setupNewsletter() {
     const feedback = document.querySelector("#newsletter-feedback");
     feedback.textContent = "Asante! " + email + " is on the list.";
     form.reset();
+  });
+}
+
+/* ---------- 6. Dark / light mode ---------- */
+
+const THEME_KEY = "tastesOfAfricaTheme";
+
+function getSavedTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light";
+  } catch (error) {
+    return "light";
+  }
+}
+
+// The stylesheet switches its colour variables on <html data-theme="dark">.
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+}
+
+// Apply the saved theme straight away (before DOMContentLoaded) to avoid a flash.
+applyTheme(getSavedTheme());
+
+function setupThemeToggle() {
+  const toggle = document.querySelector(".theme-toggle");
+  if (!toggle) return;
+
+  // Make the button describe the theme it will switch to.
+  function renderToggle(theme) {
+    const isDark = theme === "dark";
+    toggle.textContent = isDark ? "\u2600\uFE0F Light" : "\uD83C\uDF19 Dark";
+    toggle.setAttribute("aria-pressed", isDark);
+    toggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  }
+
+  renderToggle(getSavedTheme());
+
+  toggle.addEventListener("click", function () {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+
+    applyTheme(next);
+    renderToggle(next);
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch (error) {
+      // The theme still changes for this page view even if it cannot be saved.
+    }
   });
 }

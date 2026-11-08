@@ -7,16 +7,20 @@
   <title>Isombe Recipe | Tastes of Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&amp;family=Nunito:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Site header and main navigation -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">Tastes <span>of Africa</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">&#127769; Dark</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">Home</a></li>
@@ -30,6 +34,7 @@
   </header>
 
   <main id="main">
+    <!-- Page banner -->
     <section class="page-banner">
       <div class="container">
         <span class="eyebrow"><a href="../recipes.html">Recipes</a> / Rwanda</span>
@@ -55,10 +60,11 @@
             <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
           </button>
 
-          <h2 style="margin-top: 2rem;">The story behind the dish</h2>
+          <h2 class="mt-lg">The story behind the dish</h2>
           <p>Isombe is a beloved Rwandan dish made from <mark>cassava leaves</mark> pounded in a wooden mortar until fine, then simmered slowly until silky. Cassava is one of the Great Lakes region&rsquo;s most important crops, and nothing is wasted: roots become flour and ubugari, leaves become isombe.</p>
           <p>Enriched with <mark>ground peanuts</mark> and palm oil, it is served at family gatherings and weddings alongside rice, plantains (ibitoke) or ubugari. Similar dishes &mdash; sombe, pondu, saka-saka &mdash; are shared across Burundi and the Congo.</p>
 
+          <!-- Expandable cooking instructions -->
           <h2>Cooking instructions</h2>
           <p class="hint">Click a step to expand or collapse it.</p>
           <details open>
@@ -84,7 +90,7 @@
             </ol>
           </details>
 
-          <h2 style="margin-top: 2rem;">Watch: video tutorial</h2>
+          <h2 class="mt-lg">Watch: video tutorial</h2>
           <div class="video-wrap">
             <iframe src="https://www.youtube-nocookie.com/embed/eFt-j42yaRY" title="Video tutorial: how to make Isombe" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
@@ -93,15 +99,22 @@
         <aside>
           <section class="panel">
             <h2>Ingredients</h2>
+            <!-- Ingredient scaler: script.js multiplies every .qty by the chosen servings -->
+            <div class="servings-control" data-base-servings="6">
+              <span id="servings-label">Servings</span>
+              <button class="servings-btn" type="button" data-step="-1" aria-label="Decrease servings">&minus;</button>
+              <output id="servings-count" aria-labelledby="servings-label" aria-live="polite">6</output>
+              <button class="servings-btn" type="button" data-step="1" aria-label="Increase servings">+</button>
+            </div>
             <ul class="ingredients">
-              <li>500 g pounded cassava leaves (fresh or frozen)</li>
-              <li>1 cup ground peanuts or peanut butter</li>
-              <li>2 onions, chopped</li>
-              <li>2 leeks or spring onions</li>
-              <li>1 green bell pepper</li>
-              <li>2 small aubergines (intoryi), chopped</li>
-              <li>3 tbsp palm oil</li>
-              <li>2 cloves garlic</li>
+              <li><span class="qty" data-base="500">500</span> g pounded cassava leaves (fresh or frozen)</li>
+              <li><span class="qty" data-base="1">1</span> cup ground peanuts or peanut butter</li>
+              <li><span class="qty" data-base="2">2</span> onions, chopped</li>
+              <li><span class="qty" data-base="2">2</span> leeks or spring onions</li>
+              <li><span class="qty" data-base="1">1</span> green bell pepper</li>
+              <li><span class="qty" data-base="2">2</span> small aubergines (intoryi), chopped</li>
+              <li><span class="qty" data-base="3">3</span> tbsp palm oil</li>
+              <li><span class="qty" data-base="2">2</span> cloves garlic</li>
               <li>Salt to taste</li>
               <li>Optional: dried fish or beef</li>
             </ul>
@@ -136,6 +149,7 @@
     </article>
   </main>
 
+  <!-- Site footer with newsletter signup -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -167,6 +181,7 @@
     </div>
   </footer>
 
+  <!-- Shared JavaScript: theme, filter, favorites, scaler and form validation -->
   <script src="../script.js"></script>
 </body>
 </html>

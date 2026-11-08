@@ -7,16 +7,20 @@
   <title>About Us | Tastes of Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&amp;family=Nunito:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Site header and main navigation -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html">Tastes <span>of Africa</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">&#127769; Dark</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -30,6 +34,7 @@
   </header>
 
   <main id="main">
+    <!-- Page banner -->
     <section class="page-banner">
       <div class="container">
         <span class="eyebrow">Our story</span>
@@ -47,7 +52,7 @@
 
         <div class="two-col">
           <div class="prose">
-            <h2 style="margin-top: 0;">A brief history of African cuisine</h2>
+            <h2 class="mt-0">A brief history of African cuisine</h2>
             <p>Africa is the birthplace of some of the world&rsquo;s oldest crops. <mark>Sorghum</mark>, <mark>millet</mark>, <mark>teff</mark>, African rice, yams, okra, black-eyed peas and coffee were all domesticated here thousands of years ago.</p>
             <p>Trade reshaped the pantry. Trans-Saharan caravans and Indian Ocean dhows carried spices, rice and citrus; from the 1500s, crops from the Americas &mdash; maize, cassava, tomatoes, chillies and peanuts &mdash; arrived and were woven so deeply into local cooking that they now feel native.</p>
 
@@ -86,6 +91,7 @@
     </section>
   </main>
 
+  <!-- Site footer with newsletter signup -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -117,6 +123,7 @@
     </div>
   </footer>
 
+  <!-- Shared JavaScript: theme, filter, favorites, scaler and form validation -->
   <script src="script.js"></script>
 </body>
 </html>

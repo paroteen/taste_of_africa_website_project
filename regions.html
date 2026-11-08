@@ -7,16 +7,20 @@
   <title>Culinary Regions | Tastes of Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&amp;family=Nunito:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Site header and main navigation -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html">Tastes <span>of Africa</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">&#127769; Dark</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -30,6 +34,7 @@
   </header>
 
   <main id="main">
+    <!-- Page banner -->
     <section class="page-banner">
       <div class="container">
         <span class="eyebrow">A continent of kitchens</span>
@@ -40,6 +45,7 @@
 
     <section class="section">
       <div class="container">
+        <h2>Choose a region</h2>
         <div class="card-grid">
           <a class="region-card" href="regions/west-africa.html">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Suya_Seller.jpg/1280px-Suya_Seller.jpg" alt="A suya seller grilling spiced meat skewers" loading="lazy">
@@ -80,6 +86,7 @@
     </section>
   </main>
 
+  <!-- Site footer with newsletter signup -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -111,6 +118,7 @@
     </div>
   </footer>
 
+  <!-- Shared JavaScript: theme, filter, favorites, scaler and form validation -->
   <script src="script.js"></script>
 </body>
 </html>

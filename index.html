@@ -7,16 +7,20 @@
   <title>Home | Tastes of Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&amp;family=Nunito:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Site header and main navigation -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html">Tastes <span>of Africa</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">&#127769; Dark</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="index.html" aria-current="page">Home</a></li>
@@ -30,6 +34,7 @@
   </header>
 
   <main id="main">
+    <!-- Hero: background image (set in styles.css), welcome text and intro video -->
     <section class="hero">
       <div class="container">
         <div>
@@ -47,6 +52,7 @@
       </div>
     </section>
 
+    <!-- Featured dishes -->
     <section class="section" id="featured">
       <div class="container">
         <span class="eyebrow">Signature plates</span>
@@ -121,6 +127,7 @@
       </div>
     </section>
 
+    <!-- Explore by region -->
     <section class="section section--alt" id="regions">
       <div class="container">
         <span class="eyebrow">A continent of kitchens</span>
@@ -152,6 +159,7 @@
       </div>
     </section>
 
+    <!-- Latest food trends -->
     <section class="section" id="trends">
       <div class="container">
         <span class="eyebrow">What&rsquo;s cooking</span>
@@ -169,7 +177,7 @@
             <p>Algeria, Mauritania, Morocco and Tunisia jointly secured recognition for the knowledge and traditions of <mark>couscous</mark> &mdash; a rare joint celebration of shared Maghrebi culture.</p>
           </article>
           <article class="trend">
-            <time>Ongoing trend</time>
+            <span class="trend-tag">Ongoing trend</span>
             <h3>Fonio: the ancient grain making a comeback</h3>
             <p>Chefs and farmers are championing <mark>fonio</mark>, a drought-resistant West African grain grown for thousands of years, as a nutritious and climate-friendly alternative to rice and quinoa.</p>
           </article>
@@ -178,6 +186,7 @@
     </section>
   </main>
 
+  <!-- Site footer with newsletter signup -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -209,6 +218,7 @@
     </div>
   </footer>
 
+  <!-- Shared JavaScript: theme, filter, favorites, scaler and form validation -->
   <script src="script.js"></script>
 </body>
 </html>

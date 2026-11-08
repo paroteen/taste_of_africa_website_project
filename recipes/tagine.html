@@ -7,16 +7,20 @@
   <title>Chicken Tagine Recipe | Tastes of Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&amp;family=Nunito:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Site header and main navigation -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">Tastes <span>of Africa</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">&#127769; Dark</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">Home</a></li>
@@ -30,6 +34,7 @@
   </header>
 
   <main id="main">
+    <!-- Page banner -->
     <section class="page-banner">
       <div class="container">
         <span class="eyebrow"><a href="../recipes.html">Recipes</a> / Morocco</span>
@@ -55,10 +60,11 @@
             <span class="heart" aria-hidden="true">&#9829;&#xFE0E;</span> <span class="fav-label">Favorite</span>
           </button>
 
-          <h2 style="margin-top: 2rem;">The story behind the dish</h2>
+          <h2 class="mt-lg">The story behind the dish</h2>
           <p>A tagine is both the dish and the cone-lidded clay pot it is cooked in. The shape is a piece of <mark>Amazigh (Berber)</mark> engineering: steam rises, condenses on the cool cone and drips back down, so meat turns tender with very little water &mdash; ideal for an arid land.</p>
           <p>Moroccan tagines balance sweet, sour and savoury, layering <mark>ras el hanout</mark>, saffron and ginger with preserved lemons, olives, dates or apricots. It is traditionally eaten communally, scooped up with pieces of khobz bread.</p>
 
+          <!-- Expandable cooking instructions -->
           <h2>Cooking instructions</h2>
           <p class="hint">Click a step to expand or collapse it.</p>
           <details open>
@@ -84,7 +90,7 @@
             </ol>
           </details>
 
-          <h2 style="margin-top: 2rem;">Watch: video tutorial</h2>
+          <h2 class="mt-lg">Watch: video tutorial</h2>
           <div class="video-wrap">
             <iframe src="https://www.youtube-nocookie.com/embed/nZPaNd2S8Dw" title="Video tutorial: how to make Chicken Tagine" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
@@ -93,18 +99,25 @@
         <aside>
           <section class="panel">
             <h2>Ingredients</h2>
+            <!-- Ingredient scaler: script.js multiplies every .qty by the chosen servings -->
+            <div class="servings-control" data-base-servings="4">
+              <span id="servings-label">Servings</span>
+              <button class="servings-btn" type="button" data-step="-1" aria-label="Decrease servings">&minus;</button>
+              <output id="servings-count" aria-labelledby="servings-label" aria-live="polite">4</output>
+              <button class="servings-btn" type="button" data-step="1" aria-label="Increase servings">+</button>
+            </div>
             <ul class="ingredients">
-              <li>8 bone-in chicken thighs</li>
-              <li>2 onions, finely sliced</li>
-              <li>3 cloves garlic, crushed</li>
-              <li>1 preserved lemon, quartered</li>
-              <li>1 cup green olives</li>
-              <li>1 tsp ground ginger</li>
-              <li>1 tsp ground turmeric</li>
-              <li>1 tsp ras el hanout</li>
+              <li><span class="qty" data-base="8">8</span> bone-in chicken thighs</li>
+              <li><span class="qty" data-base="2">2</span> onions, finely sliced</li>
+              <li><span class="qty" data-base="3">3</span> cloves garlic, crushed</li>
+              <li><span class="qty" data-base="1">1</span> preserved lemon, quartered</li>
+              <li><span class="qty" data-base="1">1</span> cup green olives</li>
+              <li><span class="qty" data-base="1">1</span> tsp ground ginger</li>
+              <li><span class="qty" data-base="1">1</span> tsp ground turmeric</li>
+              <li><span class="qty" data-base="1">1</span> tsp ras el hanout</li>
               <li>A pinch of saffron threads</li>
-              <li>3 tbsp olive oil</li>
-              <li>1 cup water or stock</li>
+              <li><span class="qty" data-base="3">3</span> tbsp olive oil</li>
+              <li><span class="qty" data-base="1">1</span> cup water or stock</li>
               <li>Fresh coriander and parsley</li>
             </ul>
           </section>
@@ -138,6 +151,7 @@
     </article>
   </main>
 
+  <!-- Site footer with newsletter signup -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -169,6 +183,7 @@
     </div>
   </footer>
 
+  <!-- Shared JavaScript: theme, filter, favorites, scaler and form validation -->
   <script src="../script.js"></script>
 </body>
 </html>

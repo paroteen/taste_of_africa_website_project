@@ -7,16 +7,20 @@
   <title>North Africa | Tastes of Africa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,800&amp;family=Nunito:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Site header and main navigation -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">Tastes <span>of Africa</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">&#127769; Dark</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">Home</a></li>
@@ -30,6 +34,7 @@
   </header>
 
   <main id="main">
+    <!-- Page banner -->
     <section class="page-banner">
       <div class="container">
         <span class="eyebrow"><a href="../regions.html">Regions</a> / North Africa</span>
@@ -41,7 +46,7 @@
     <section class="section">
       <div class="container two-col">
         <div class="prose">
-          <h2 style="margin-top: 0;">Food culture</h2>
+          <h2 class="mt-0">Food culture</h2>
           <p>North African cooking is perfumed rather than fiery. Spice merchants blend <mark>ras el hanout</mark> &mdash; literally &ldquo;head of the shop&rdquo; &mdash; from dozens of spices, and cooks balance savoury meat with sweet dried fruit, honey and <mark>preserved lemons</mark>.</p>
           <p>Hospitality is sacred: guests are welcomed with sweet <mark>mint tea</mark> poured from a height, and Friday couscous is a family ritual. In 2020, the knowledge and practices of couscous were inscribed on UNESCO&rsquo;s list of intangible cultural heritage.</p>
 
@@ -99,6 +104,7 @@
     </section>
   </main>
 
+  <!-- Site footer with newsletter signup -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -130,6 +136,7 @@
     </div>
   </footer>
 
+  <!-- Shared JavaScript: theme, filter, favorites, scaler and form validation -->
   <script src="../script.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
    4. Contact form validation & feedback
    5. Newsletter signup feedback
    6. Dark / light mode toggle
+   7. Ingredient scaler (recipe pages)
    ========================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupContactForm();
   setupNewsletter();
   setupThemeToggle();
+  setupIngredientScaler();
 });
 
 /* ---------- 1. Mobile navigation ---------- */
@@ -274,4 +276,59 @@ function setupThemeToggle() {
       // The theme still changes for this page view even if it cannot be saved.
     }
   });
+}
+
+/* ---------- 7. Ingredient scaler ---------- */
+
+// Turn a number into a kitchen-friendly amount, e.g. 1.5 -> "1½", 583.3 -> "585".
+function formatQuantity(value) {
+  // Large amounts (grams) are rounded to the nearest 5.
+  if (value >= 20) {
+    return String(Math.round(value / 5) * 5);
+  }
+
+  // Small amounts are rounded to the nearest quarter, never below ¼.
+  const quarters = Math.max(1, Math.round(value * 4));
+  const whole = Math.floor(quarters / 4);
+  const fractions = ["", "\u00BC", "\u00BD", "\u00BE"];
+  const fraction = fractions[quarters % 4];
+
+  return (whole > 0 ? whole : "") + fraction;
+}
+
+function setupIngredientScaler() {
+  const control = document.querySelector(".servings-control");
+  if (!control) return;
+
+  const output = control.querySelector("#servings-count");
+  const buttons = control.querySelectorAll(".servings-btn");
+  const quantities = document.querySelectorAll(".ingredients .qty");
+  const baseServings = Number(control.dataset.baseServings);
+  const MIN_SERVINGS = 1;
+  const MAX_SERVINGS = 24;
+  let servings = baseServings;
+
+  function render() {
+    output.textContent = servings;
+
+    // Each quantity keeps its original amount in data-base, so scaling never drifts.
+    for (const quantity of quantities) {
+      const scaled = (Number(quantity.dataset.base) * servings) / baseServings;
+      quantity.textContent = formatQuantity(scaled);
+    }
+
+    for (const button of buttons) {
+      const next = servings + Number(button.dataset.step);
+      button.disabled = next < MIN_SERVINGS || next > MAX_SERVINGS;
+    }
+  }
+
+  for (const button of buttons) {
+    button.addEventListener("click", function () {
+      servings += Number(button.dataset.step);
+      render();
+    });
+  }
+
+  render();
 }
